@@ -4,6 +4,7 @@ package topic00.review;
 public class ArrayReview {
     
     
+    //display array
     public static void displayArray(int [] A){
         for (int i=0;i<A.length;i++){
             System.out.printf("A[%d]=%d\n", i,A[i]);
