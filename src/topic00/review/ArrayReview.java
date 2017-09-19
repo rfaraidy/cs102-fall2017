@@ -25,6 +25,59 @@ public class ArrayReview {
     }
     
     
+    public static void displayMatrix (String name,int [][] M){
+        System.out.println("Matrix: "+ name);
+        for (int i=0;i<M.length;i++){
+           for (int j=0;j<M[i].length;j++){
+               System.out.printf("%d\t", M[i][j]);
+           }
+            System.out.println("");
+       } 
+    }
+    
+    public static void displayMatrix (String name,double [][] M){
+        System.out.println("Matrix: "+ name);
+        for (int i=0;i<M.length;i++){
+           for (int j=0;j<M[i].length;j++){
+               System.out.printf("%.2f\t", M[i][j]);
+           }
+            System.out.println("");
+       } 
+    }
+    
+    
+    public static void initMatrix(double [][] M){
+        for (int i=0;i<M.length;i++){
+           for (int j=0;j<M[i].length;j++){
+               M[i][j]=(Math.random()*50);
+           }
+       }
+    }
+    
+    
+    public static double [][] sumMatrix(double [][] X, double [][] Y){
+        //if we asssume that rows and colums are all equal
+        if (X.length!=Y.length)
+            throw new IllegalArgumentException("[Error] The number of rows of the matrices must be the same size");
+        
+        for (int i=0;i<X.length;i++)
+        if (X[i].length!=Y[i].length)
+            throw new IllegalArgumentException("[Error] The number of columns of the matrices must be the same size");
+        
+        
+        int nRows=X.length;
+        int nCol=X[0].length;
+        double [][] sum = new double [nRows][nCol];
+        
+        for (int i=0;i<nRows;i++){
+            for (int j=0;j<nCol;j++){
+                sum[i][j]=X[i][j]+Y[i][j];
+            }
+        }
+        return sum;
+    }
+    
+    
     public static void main (String []args){
         
         
@@ -37,6 +90,8 @@ public class ArrayReview {
         int [] intArray = new int [6];
         String [] stringArray = new String [3];
         double [] doubleArray = new double [8];
+        
+        
         
         
         stringArray[0]= "CS101";
@@ -59,8 +114,8 @@ public class ArrayReview {
        
        
        //Two Dimensional Arrays
-       int numberOfRows = 4;
-       int numberOfColumns = 3;
+       int numberOfRows = 5;
+       int numberOfColumns = 10;
        
        //declare a two dimensional array
        int [][] intMatrix = new int [numberOfRows][numberOfColumns];
@@ -74,13 +129,25 @@ public class ArrayReview {
            }
        }
        
-       for (int i=0;i<intMatrix.length;i++){
-           for (int j=0;j<intMatrix[i].length;j++){
-               System.out.printf("intMatrix[%d][%d]=%d\n",i,j,intMatrix[i][j]);
-           }
-       }       
+       displayMatrix("intMatrix", intMatrix);   
+       
+       double [][] A = new double [4][3];
+       double [][] B = new double [4][3];
+       
+       
+       double [][] S = new double [3][3];
         
-           
+       initMatrix(A);
+       initMatrix(B);
+        System.out.println("");
+       displayMatrix("A", A);
+        System.out.println("");
+       displayMatrix("B", B);  
+       
+       S = sumMatrix(A,B);
+       System.out.println("");
+       displayMatrix("Sum", S);  
+       
         
         
     }
