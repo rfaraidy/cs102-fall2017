@@ -56,9 +56,18 @@ public class ArrayListReview {
         System.out.println("What is the value of index 2 in intList: "+ intArrayList.get(2));
         System.out.println("What is the value of index 3 in intList: "+ intArrayList.get(3));
         
-        
+        //for loop
         for (int i=0;i<stringArrayList.size();i++)
-        System.out.printf("stringArrayList[%d]: = %d \n",i, intArrayList.get(i));
+        System.out.printf("stringArrayList[%d]: = %s \n",i, stringArrayList.get(i));
+        
+        //foreach loop
+        for (String s : stringArrayList){
+            System.out.printf("stringArrayList: = %s \n", s);
+        }
+        
+        for (Integer n : intArrayList){
+            System.out.printf("intArrayList: = %d \n", n);
+        }
         
         
         System.out.println("Does stringList contains CS102: "+ stringArrayList.contains("CS102"));
