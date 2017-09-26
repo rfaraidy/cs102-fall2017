@@ -28,7 +28,7 @@ public class Student {
         
         setFirstName(fn);
         setLastName(ln);
-        setId(id);
+        setId(student_id);
         setAge(student_age);
         setPhone(ph);
         
