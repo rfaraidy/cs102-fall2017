@@ -13,36 +13,43 @@ public class Student {
     private String phone;
     
     
+    private static int count=0;
+    
+    
     //full argument constructor
-    public Student(String fn, String ln, String student_id, int student_age, String ph){
-        //attribute = parameter
-        //firstName = fn;
-        //lastName = ln;
-        //id = student_id;
-        //age = student_age;
-                
-        //phone= ph;
-        
+    public Student(String firstName, String lastName, String id, int age, String phone){
         //set the phone with validation usin the set method
+        setFirstName(firstName);
+        this.setLastName(lastName);
+        setId(id);
+        setAge(age);
+        setPhone(phone);
         
-        
-        setFirstName(fn);
-        setLastName(ln);
-        setId(student_id);
-        setAge(student_age);
-        setPhone(ph);
-        
-       
+        count ++;
 
     }
     
     
+    public Student(String firstName, String lastName){
+        setFirstName(firstName);
+        this.setLastName(lastName);
+    }
+    
+    public static int getCount(){
+        return count;
+    }
+    
+    
+    public static void setCount(int newValue){
+        count = newValue;
+    }
+    
     
     public void displayStudentInfo(){
         System.out.println("\nStudent");
-        System.out.println("First Name: "+ firstName);
-        System.out.println("Last Name: "+ lastName);
-        System.out.println("ID: "+ id);
+        System.out.println("First Name: "+ this.firstName);
+        System.out.println("Last Name: "+ this.lastName);
+        System.out.println("ID: "+ this.id);
         System.out.println("Age: "+ age);
         System.out.println("Phone: "+ phone);
     }
@@ -58,8 +65,8 @@ public class Student {
     }
     
     //set method for firstName
-    public void setFirstName(String fn){
-        firstName = fn;
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
     }
     
     
@@ -69,8 +76,8 @@ public class Student {
     }
     
     //set method for lastName
-    public void setLastName(String ln){
-        lastName = ln;
+    public void setLastName(String lastName){
+        this.lastName = lastName;
     }
     
     //get method for age
