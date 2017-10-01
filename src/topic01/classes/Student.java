@@ -11,19 +11,23 @@ public class Student {
     private String id;
     private int age;
     private String phone;
+    private Date birthDate;
     
     
     private static int count=0;
     
     
     //full argument constructor
-    public Student(String firstName, String lastName, String id, int age, String phone){
+    public Student(String firstName, String lastName, 
+            String id, int age, String phone, Date bd){
         //set the phone with validation usin the set method
         setFirstName(firstName);
         this.setLastName(lastName);
         setId(id);
         setAge(age);
         setPhone(phone);
+        
+        setBirthDate(bd);
         
         count ++;
 
@@ -56,6 +60,16 @@ public class Student {
     
     public void displayAge(){
         System.out.println("Age: "+ age);
+    }
+    
+    //get method for birthDate
+    public Date getBirthDate(){
+        return birthDate;
+    }
+    
+    //set method for birthDate
+    public void setBirthDate(Date birthDate){
+        this.birthDate = birthDate;
     }
     
     
@@ -115,4 +129,9 @@ public class Student {
     public void setId(String ID){
         id = ID;
     }
+    
+    public String toString(){
+        return String.format("%s %s", firstName, lastName);
+    }
+    
 }

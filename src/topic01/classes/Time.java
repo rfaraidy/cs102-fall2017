@@ -18,7 +18,7 @@ public class Time {
     
     //constructor only for hour
     public Time(int hour){
-        this(hour, 0,0);
+        this(hour, 0, 0);
         //setHour(hour);
         //setMinute(0);
         //setSecond(0);
@@ -38,6 +38,19 @@ public class Time {
         //setHour(0);
         //setMinute(0);
         //setSecond(0);
+    }
+    
+    //copy constructor
+    public Time(Time t){
+        //this.hour = t.hour;
+        //this.minute = t.minute;
+        //this.second=t.second;
+        
+        //setHour(t.hour);
+        //setMinute(t.minute);
+        //setSecond(t.second);
+        
+        this(t.hour,t.minute,t.second);
     }
     
     
@@ -74,6 +87,31 @@ public class Time {
         else throw new IllegalArgumentException("second must be between 0 and 59"); 
     }
     
+    public String toUniversalString(){
+        return String.format("%02d:%02d:%02d", hour, minute, second);
+    }
+    
+    public String toString(){
+        return String.format("%02d:%02d:%02d", hour, minute, second);
+    }
+    
+    public String toStandardString(){
+        
+        String AM_PM = "AM";
+        int h=hour;
+        if (hour==0){
+            h = 12;
+            AM_PM = "AM";
+        }
+        else if (hour==12){  
+            AM_PM = "PM";
+        }
+        else if ((hour>12)&&(hour<=23)){
+            h = hour%12;
+            AM_PM = "PM";
+        }
+        return String.format("%d:%02d:%02d %s", h, minute, second, AM_PM);
+    }
     
     
     

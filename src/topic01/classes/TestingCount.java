@@ -10,14 +10,17 @@ public class TestingCount {
     
         public static void main(String [] args ){
             
-            Student student1 = new Student("Ali", "Ahmed", "12345", 25, "0534567890");
+            Student student1 = new Student("Ali", "Ahmed", "12345", 
+                    25, "0534567890", new Date(1,4,1990));
             System.out.println("Student Count: "+ Student.getCount());
             //System.out.println("s1 count: "+ student1.getCount());
-            Student student2 = new Student("Kamel","Salah","98398",26,"0534567891" );
+            Student student2 = new Student("Kamel","Salah","98398",
+                    26,"0534567891", new Date(1,4,1990) );
             System.out.println("Student Count: "+ Student.getCount());            
             //System.out.println("s1 count: "+ student1.getCount());
             //System.out.println("s2 count: "+ student2.getCount());
-            Student student3 = new Student("Hamed","Karim","56673", 23, "0534567892"  );
+            Student student3 = new Student("Hamed","Karim","56673", 23,
+                    "0534567892", new Date(1,4,1990) );
             //System.out.println("s1 count: "+ student1.getCount());
             //System.out.println("s2 count: "+ student2.getCount());
             //System.out.println("s3 count: "+ student2.getCount());
