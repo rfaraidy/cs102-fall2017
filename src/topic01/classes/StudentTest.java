@@ -24,7 +24,11 @@ public class StudentTest {
         //student1.age=26;
         student1.setAge(27);
         student1.setPhone("0534567890");
-
+        student1.getBirthDate().setDay(25);
+        student1.getBirthDate().setMonth(5);
+        student1.setBirthDate(new Date(25,5,1900));
+        
+        
         //student1.phone="29393dds";
         
         System.out.println("Student First Name: "+ student1.getFirstName());
@@ -62,10 +66,6 @@ public class StudentTest {
         }
         
         System.out.println("Student 1: "+ student1);
-        
-        
-        
-        
         
         
     }
