@@ -39,7 +39,7 @@ public class TemperatureTest {
                 fw.close();
 
         
-            System.out.println("File Input Output Exception" + ex);
+            System.out.println("File Input Output Exception" );
         
         
         /*
