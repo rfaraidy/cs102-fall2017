@@ -1,0 +1,32 @@
+<students>
+	<student>
+		<first_name>Mohamed</first_name> 
+		<last_name>Ali</last_name>
+		<gpa>3.2</gpa>
+		<age>23</age>
+	</student>
+	<student>
+		<first_name>Kamal</first_name>
+		<last_name>Salah</last_name>
+		<age>20</age>
+		<gpa>5.2</gpa>
+	</student>
+	<student>
+		<first_name>Slim</first_name>
+		<last_name>Amer</last_name>
+		<gpa>4.2</gpa>
+		<age>21</age>
+	</student>
+	<student>
+		<first_name>Mounir</first_name>
+		<last_name>Ahmed</last_name>
+		<gpa>3.23</gpa>
+		<age>25</age>
+	</student>
+	<student>
+		<first_name>Mostafa</first_name>
+		<last_name>Hamdi</last_name>
+		<gpa>4.55</gpa>
+		<age>22</age>
+	</student>
+</students>

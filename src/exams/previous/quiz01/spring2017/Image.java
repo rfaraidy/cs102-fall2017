@@ -2,20 +2,30 @@ package exams.previous.quiz01.spring2017;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Image {
     
     private String name;
     private int width;
     private int height;
-    private int[][]  img;
+    private int[][]  img ;
 
    public Image(String name, int width, int height, int[][]image){
         setName(name);
         setWidth(width);
         setHeight(height);
         setImg(image);
+    }
+   public Image(String name, int width, int height){
+        setName(name);
+        setWidth(width);
+        setHeight(height);
+        img = new int [this.height][this.width] ;
     }
     
     public Image(Image i){
@@ -109,20 +119,61 @@ The fifth line until the last contains the
             int height = scanner.nextInt();//5
            
             
-            
-            while(scanner.hasNext()){
-                for (int i =0;i<img.length;i++){
-                    for (int j=0;j<img[i].length;j++){
-                        img[i][j]= scanner.nextInt();
-                    }
+            int i =0;
+            while(scanner.hasNextInt()){
+                //System.out.println(color);
+                for (int j=0;j<img[i].length;j++){
+                    int color = scanner.nextInt();
+                    img[i][j]=color;
                 }
+                i++;
             }
         } catch (
             FileNotFoundException ex) {
             System.out.println("Error: The file your want to read was not found. Check the name of your file");
         }
-        return false;       
+        return true;       
         
+    }
+    
+    /*
+    The class Image has the method public boolean 
+    imwrite(String filename), which writes an image 
+    to a file according to the structure as defined above.
+    Write the method imwrite(filename).
+    */
+    
+    public boolean imwrite(String filename){
+        
+        File file = new File(filename);
+        FileWriter fw;
+        try {
+             fw = new FileWriter (file);
+             fw.write("P2\n");
+             fw.write("#Converted from MAP format\n");
+             fw.write(width+" "+ height+"\n");
+             for (int i=0;i<height;i++){
+                 for (int j=0;j<width;j++){
+                     fw.write(img[i][j]+" ");
+                 }
+                 fw.write("\n");
+             }
+             fw.close();
+        } catch (IOException ex) {
+            System.out.println("File IO Exception");
+        }
+        
+        return true;
+    }
+    
+    public void displayImage (){
+        System.out.println("Image: "+ name);
+        for (int i=0;i<img.length;i++){
+           for (int j=0;j<img[i].length;j++){
+               System.out.printf("%d\t", img[i][j]);
+           }
+            System.out.println("");
+       } 
     }
     
 }
