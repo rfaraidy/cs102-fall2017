@@ -1,0 +1,8 @@
+Node{id=N0, level=0}
+Node{id=N1, level=1}
+Node{id=N2, level=1}
+Node{id=N3, level=2}
+Node{id=N4, level=2}
+Node{id=N5, level=2}
+Node{id=N6, level=2}
+Node{id=N7, level=2}

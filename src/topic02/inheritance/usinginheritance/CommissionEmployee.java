@@ -1,5 +1,6 @@
 package topic02.inheritance.usinginheritance;
 
+
 public class CommissionEmployee {
     private String firstName;
     private String lastName;
@@ -66,7 +67,7 @@ public class CommissionEmployee {
         return commissionRate*grossSales;
     }
     
-    
+    @Override
     public String toString(){
         return String.format("commission employee: %s %s\n"
                 + "social security number: %s \n"
@@ -74,6 +75,7 @@ public class CommissionEmployee {
                 + "commission rate: %.2f", firstName, 
                 lastName, Ssn, 
                 grossSales, commissionRate);
-    }
+        
+    } 
     
 }
