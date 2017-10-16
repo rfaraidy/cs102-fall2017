@@ -16,12 +16,11 @@ public class Node {
     private int level;
 
     public Node(String id, int level) {
-        this.id = id;
-        this.level = level;
+        setId(id);
+        setLevel(level);
     }
     public Node(String id) {
-        this.id = id;
-        this.level = -1;
+        this(id, -1);
     }
     public Node (Node n){
         this(n.getId(), n.getLevel());

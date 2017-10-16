@@ -15,8 +15,12 @@ public class TreeTest {
         
         Tree tree = new Tree ();
         
-        tree.add(new Node("N0"), 0);
-        tree.add(new Node("N1"), 1);
+        Node N0 = new Node("N0");
+        tree.add(N0,0);
+        
+        Node N1 = new Node("N1");
+        tree.add(N1, 1);
+        
         tree.add(new Node("N2"), 1);
         tree.add(new Node("N3"), 2);
         tree.add(new Node("N4"), 2);
@@ -40,10 +44,10 @@ public class TreeTest {
             Logger.getLogger(TreeTest.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
+        //composition
         tree.getTree().get(5).setLevel(1);
         
-        
+        //children of the root
         System.out.println("\nChildren of the root");
         for (Node n: tree.getTree()){
             if (n.getLevel()==1)

@@ -12,6 +12,10 @@ public class Tree {
 
     public Tree() {
     }
+    
+    public Tree(Tree t) {
+        this.setTree(t.tree);
+    }
 
     public ArrayList<Node> getTree() {
         return tree;
@@ -41,5 +45,10 @@ public class Tree {
         return false;
     }
     
+    public boolean isRoot(Node n){
+        if (n.getLevel()==0)
+            return true;
+        return false;
+    }
     
 }
