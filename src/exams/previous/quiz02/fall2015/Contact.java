@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package exams.previous.quizzes.fall2015.quiz2;
+package exams.previous.quiz02.fall2015;
 
 /**
  *

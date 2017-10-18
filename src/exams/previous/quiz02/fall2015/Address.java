@@ -1,4 +1,4 @@
-package exams.previous.quizzes.fall2015.quiz2;
+package exams.previous.quiz02.fall2015;
 
 
 
