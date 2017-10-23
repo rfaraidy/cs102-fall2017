@@ -1,4 +1,4 @@
-package exams.previous.quiz01.fall2016;
+package exams.previous.quiz01.spring2016;
 
 import java.util.ArrayList;
 

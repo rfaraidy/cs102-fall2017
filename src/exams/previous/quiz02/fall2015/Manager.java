@@ -30,6 +30,16 @@ public class Manager extends Employee{
         setEmployees(employees);
     
     }
+    
+    public Manager(Employee e, String type,double salary_increment, 
+            ArrayList<Employee> employees){
+    super(e.getFirstName(), e.getLastName(), e.getContact(),
+            e.getId(),e.getDepartment(),e.getBaseSalary());
+        //super (e);
+        setType(type);
+        setSalaryIncrement(salary_increment);
+        setEmployees(employees);
+    }
 
     public ArrayList<Employee> getEmployees() {
         return employees;

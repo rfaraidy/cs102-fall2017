@@ -25,6 +25,17 @@ public class Employee extends Person{
         DEPARTMENTS.add(new Department("Public Relations","03"));
     }
 
+    //copy constructor of Employee
+    public Employee (Employee e){
+        super(e.getFirstName(), e.getLastName(), e.getContact());
+        setId(id);
+        setDepartment(department);
+        setBaseSalary(baseSalary);
+        DEPARTMENTS.add(new Department("HR","01"));
+        DEPARTMENTS.add(new Department("FINANCE","02"));
+        DEPARTMENTS.add(new Department("Public Relations","03"));
+    }
+    
     public String getId() {
         return id;
     }

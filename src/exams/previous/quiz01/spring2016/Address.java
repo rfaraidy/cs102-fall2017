@@ -1,4 +1,4 @@
-package exams.previous.quiz01.fall2016;
+package exams.previous.quiz01.spring2016;
 
 public class Address {
     private Street StreetName;
